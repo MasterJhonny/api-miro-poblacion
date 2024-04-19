@@ -7,13 +7,7 @@ const service = new DataService();
 
 const PORT = process.env.PORT || 3000;
 
-const corsOptions = {
-  origin: "*",
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  optionsSuccessStatus: 200
-};
-
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(express.json());
 
