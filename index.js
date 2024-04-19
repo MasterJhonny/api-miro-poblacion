@@ -8,8 +8,9 @@ const service = new DataService();
 const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
-  origin: ['http://localhost:5173/', 'https://form-miro-poblacion.vercel.app/'],
+  origin: ['http://localhost:5173', 'https://form-miro-poblacion.vercel.app'],
   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  optionsSuccessStatus: 200
 };
 
 app.use(cors(corsOptions));
