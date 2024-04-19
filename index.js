@@ -7,8 +7,14 @@ const service = new DataService();
 
 const PORT = process.env.PORT || 3000;
 
-const corsMiddleware = cors();
-app.use(corsMiddleware)
+const corsOptions = {
+  origin: ['http://localhost:5173/', 'https://form-miro-poblacion.vercel.app/'], // Permite solicitudes desde cualquier origen. Cambia esto por el dominio específico si deseas restringir el acceso.
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  preflightContinue: false,
+  optionsSuccessStatus: 204
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json());
 
